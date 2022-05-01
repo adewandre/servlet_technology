@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @WebServlet(value = "/SelectBeer.do")
 public class SelectBeerServlet extends HttpServlet {
 
 	private final BeerExpert beerExpert;
 
+	@Autowired
 	public SelectBeerServlet(BeerExpert beerExpert) {
 		this.beerExpert = beerExpert;
 	}
