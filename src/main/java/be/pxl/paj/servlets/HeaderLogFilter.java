@@ -1,7 +1,8 @@
 package be.pxl.paj.servlets;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -14,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collections;
 
-@WebFilter(urlPatterns = { "/*" })
+@WebFilter(urlPatterns = { "/SelectBeer.do" })
 public class HeaderLogFilter implements Filter {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(HeaderLogFilter.class);
+	private static final Logger LOGGER = LogManager.getLogger(HeaderLogFilter.class);
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,

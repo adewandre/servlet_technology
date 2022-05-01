@@ -1,6 +1,7 @@
 package be.pxl.paj.servlets;
 
 import be.pxl.paj.servlets.service.BeerExpert;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +28,6 @@ public class SelectBeerServlet extends HttpServlet {
 
 		List<String> result = beerExpert.getBrands(color);
 		PrintWriter writer = resp.getWriter();
-		int activeSessions = BeerSessionCounter.getActiveSessions();
 
 		writer.println("<html>" +
 				"<body>" +
