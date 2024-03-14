@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.awt.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -27,13 +26,11 @@ public class UsingCookies extends HttpServlet {
 		out.println("<BODY");
 
 		Cookie[] cookies = request.getCookies();
-		boolean foundCookie = false;
 
 		for (int loopIndex = 0; loopIndex < cookies.length; loopIndex++) {
 			Cookie cookie1 = cookies[loopIndex];
 			if (cookie1.getName().equals("color")) {
 				out.println("bgcolor = " + cookie1.getValue());
-				foundCookie = true;
 			}
 		}
 
